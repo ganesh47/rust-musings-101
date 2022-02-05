@@ -4,15 +4,16 @@ pub struct User {
     pub guess_count: u32
 }
 
-pub fn build_user(name:String) -> User {
+pub fn build_user(name:&str) -> User {
     User{
-        name:  String::from(name),
+        name:  name.to_string(),
         guess_count: 0
     }
 }
-pub fn update_count(count:u32,user:&User) -> User {
-    User{
-        guess_count: count,
-        name: user.name.clone()
+
+impl User {
+    //increment guess count , while guess are being made!
+    pub fn guess(&mut self) -> () {
+        self.guess_count=self.guess_count+1
     }
 }
