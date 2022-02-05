@@ -5,13 +5,12 @@ use rand::{Rng, thread_rng};
 use std::cmp::Ordering;
 use std::io::stdin;
 use structs::User;
-use crate::structs::build_user;
 
 fn main() {
     println!("Please enter name!");
     let mut name = String::new();
     stdin().read_line(&mut name).expect("Failed to read name!");
-    let mut user: User = build_user(name.trim());
+    let mut user: User = User::build_user(name.trim());
 
     let secret = thread_rng().gen_range(1..101);
     println!("Have chosen a secret number between 1 and 100 , try and guess by entering number");
