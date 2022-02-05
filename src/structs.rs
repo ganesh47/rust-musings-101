@@ -9,9 +9,9 @@ pub fn build_user(name:String) -> User {
         guess_count: 0
     }
 }
-pub fn update_count(count:u32,user:User) -> User {
+pub fn update_count(count:u32,user:&User) -> User {
     User{
         guess_count: count,
-        ..user
+        name: user.name.clone()
     }
 }

@@ -28,12 +28,12 @@ fn main() {
 
         match guess.cmp(&secret) {
             Ordering::Less => {
-                user = structs::update_count(user.guess_count + 1, user);
-                println!("Its small , you've had {} guessses",user.guess_count)
+                user = structs::update_count(user.guess_count + 1, &user);
+                println!("Psst small!")
             }
             Ordering::Greater => {
-                user = structs::update_count(user.guess_count + 1, user);
-                println!("Its large , with {} guesses",user.guess_count)
+                user = structs::update_count(user.guess_count + 1, &user);
+                println!("Psst large!")
             }
             Ordering::Equal => {
                 println!("Bingo {} , you've taken {} guesses!!!", user.name, user.guess_count);
