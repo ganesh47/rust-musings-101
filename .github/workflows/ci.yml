@@ -1,6 +1,6 @@
 on: [push]
 
-name: CI
+name: Rust Musings 101
 
 jobs:
   build_and_test:

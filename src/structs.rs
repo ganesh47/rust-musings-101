@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct User {
     pub name: String,
     pub guess_count: u32
